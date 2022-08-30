@@ -13,20 +13,23 @@ import { useState } from "react";
 
 export default function Item(props) {
 
-  //candidad en stock
-  const [valorStock, setValorStock] = useState(props.stock)
+  //Mensaje agotado
+  const agotado = "agotado";
+
+  //Valor de la cantidad en stock
+  const [valorStock, setValorStock] = useState(props.stock);
   
   //Método para disminuir el stock
   function reducirStock(){
 
-    if(valorStock > 0){
+    if(valorStock > 1){
 
-      //Reducir cantidad de stock
+      //Reducir el valor de la cantidad de stock
       const cantidadStock = valorStock - 1;
       
       setValorStock(cantidadStock);
 
-      //aumentar cantidad de compras
+      //ejecutar el método para aumentar valor de cantidad de compras
       props.onAumentar();
     }
     else if(valorStock === 1){
@@ -34,11 +37,13 @@ export default function Item(props) {
       //aumentar cantidad de compras
       props.onAumentar();
 
-      setValorStock("Agotado");
+      //seteamos mensaje de agotado
+      setValorStock(agotado);
 
     }
     else{
-      setValorStock("Agotado");
+      //seteamos mensaje de agotado
+      setValorStock(agotado);
     }
   }
 

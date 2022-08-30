@@ -11,20 +11,17 @@ import objetos from './data.json';
 
 export default function Listado(props) {
 
-  //Declaramos variables requeridas
-  
-
   return (
     <div className='container'>
       {/* renderizamos los Item aquí */}
       {objetos.map( dato => {
         return(
           <Item 
-          key={dato.id} 
-          name={dato.producto.nombre} 
-          description={dato.producto.descripcion} 
-          stock={dato.stock}
-          onAumentar={props.onSumarContador}
+            key={dato.id} 
+            name={dato.producto.nombre} 
+            description={dato.producto.descripcion} 
+            stock={dato.stock}
+            onAumentar={props.onSumarContador}
           />
         )
       })}

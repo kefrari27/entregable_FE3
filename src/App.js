@@ -17,10 +17,9 @@ function App() {
   //Método aumentar contador
   function aumentarContador(){
 
-    //Declaramos variables
+    //Aumentar el valor de cantidad de compras
     const cantidad = contadorCompras + 1;
 
-    //seteamos el valor de contador de compras
     setContadorCompras(cantidad);
 
   }
